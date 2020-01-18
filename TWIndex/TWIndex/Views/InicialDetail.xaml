@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TWIndex.Views.InicialDetail"
+             Title="Detail"
+             Visual="Material">
+
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Avaliar Proposta" FontFamily="Roboto"  FontSize="20" TextColor="White" VerticalTextAlignment="Center" />
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <StackLayout Padding="10">
+        <CollectionView ItemsSource="{Binding TiposTrabalho}" SelectionMode="Single" SelectedItem="{Binding TrabalhoSelecionado}">
+            <CollectionView.ItemTemplate >
+                <DataTemplate>
+                    <StackLayout>
+                        <Label Margin="10" Text="{Binding Nome}" FontSize="18" ></Label>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+  </StackLayout>
+</ContentPage>

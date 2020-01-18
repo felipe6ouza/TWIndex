@@ -1,4 +1,5 @@
 ﻿using System;
+using TWIndex.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -8,9 +9,11 @@ namespace TWIndex
     {
         public App()
         {
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MTk4MTQ3QDMxMzcyZTM0MmUzMGF6WDcwUEV5NHhDZTVkZ2prbUV4Uyt2U0l2MDdjV0Y3TmtoMTdqVnUwaVU9");
+
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new Inicial();
         }
 
         protected override void OnStart()

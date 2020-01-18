@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:numeric="clr-namespace:Syncfusion.SfNumericUpDown.XForms;assembly=Syncfusion.SfNumericUpDown.XForms"
+             mc:Ignorable="d"
+             x:Class="TWIndex.Views.InfoTrabalho"
+             Visual="Material"
+             >
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Informações Sobre o Trabalho" FontSize="17" TextColor="White"  />
+        </StackLayout>
+    </NavigationPage.TitleView>
+    
+    <ContentPage.Content>
+        <StackLayout Margin="15">
+            <Entry Placeholder="Titulo do Trabalho" Keyboard="Text"> </Entry>
+            <Entry Placeholder="Nome Autor" Keyboard="Text" ></Entry>
+            <Entry Placeholder="Instituição de Origem" Keyboard="Text"></Entry>
+            <Entry Placeholder="Departamento" Keyboard="Text"></Entry>
+            <Label HorizontalOptions="Center" Text="Insira a quantidade de palavras-chave: "></Label>
+            <numeric:SfNumericUpDown x:Name="numericUpDown" TextAlignment="Start" FontSize="20"  Margin="30, 0, 30, 0" FormatString="n" Value="5" Minimum="1" Maximum="6" MaximumDecimalDigits ="0" ParsingMode="Decimal"/>
+            <Button BackgroundColor="#280680" Margin="40, 20, 40, 20" TextColor="White" FontSize="12" Text="Avançar"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
