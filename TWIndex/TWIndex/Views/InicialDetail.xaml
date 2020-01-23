@@ -19,7 +19,7 @@
             <CollectionView.ItemTemplate >
                 <DataTemplate>
                     <StackLayout>
-                        <Label Margin="10" Text="{Binding Nome}" FontSize="18" ></Label>
+                        <Label Margin="10" Text="{Binding Tipo}" FontSize="18" ></Label>
                     </StackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>

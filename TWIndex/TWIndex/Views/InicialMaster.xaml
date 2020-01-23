@@ -22,7 +22,7 @@
           </x:Array>
       </d:ListView.ItemsSource>
       <ListView.Header>
-        <Grid BackgroundColor="#03A9F4">
+                <Grid BackgroundColor="#5e35b1">
           <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10"/>
             <ColumnDefinition Width="*"/>

@@ -26,7 +26,7 @@ namespace TWIndex.Views
             MessagingCenter.Subscribe<Trabalho>(this, "TrabalhoSelecionado",
             (msg) =>
             {
-                Navigation.PushAsync(new InfoTrabalho());
+                Navigation.PushAsync(new InfoTrabalho(msg));
             });
         }
 

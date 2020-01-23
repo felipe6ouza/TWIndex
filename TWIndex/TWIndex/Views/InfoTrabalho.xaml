@@ -16,13 +16,13 @@
     
     <ContentPage.Content>
         <StackLayout Margin="15">
-            <Entry Placeholder="Titulo do Trabalho" Keyboard="Text"> </Entry>
-            <Entry Placeholder="Nome Autor" Keyboard="Text" ></Entry>
-            <Entry Placeholder="Instituição de Origem" Keyboard="Text"></Entry>
-            <Entry Placeholder="Departamento" Keyboard="Text"></Entry>
+            <Entry Text="{Binding EntryTitulo}" Placeholder="Titulo do Trabalho"  Keyboard="Text"> </Entry>
+            <Entry Text="{Binding EntryAutor}" Placeholder="Nome Autor" Keyboard="Text" ></Entry>
+            <Entry Text="{Binding EntryOrigem}" Placeholder="Instituição de Origem" Keyboard="Text"></Entry>
+            <Entry Text="{Binding EntryDepartamento}" Placeholder="Departamento" Keyboard="Text"></Entry>
             <Label HorizontalOptions="Center" Text="Insira a quantidade de palavras-chave: "></Label>
-            <numeric:SfNumericUpDown x:Name="numericUpDown" TextAlignment="Start" FontSize="20"  Margin="30, 0, 30, 0" FormatString="n" Value="5" Minimum="1" Maximum="6" MaximumDecimalDigits ="0" ParsingMode="Decimal"/>
-            <Button BackgroundColor="#280680" Margin="40, 20, 40, 20" TextColor="White" FontSize="12" Text="Avançar"></Button>
+            <numeric:SfNumericUpDown x:Name="numericUpDown" TextAlignment="Start"   FontSize="20"  Margin="30, 0, 30, 0" FormatString="n" Value="{Binding ValorNumericUpDown}" Minimum="1" Maximum="6" MaximumDecimalDigits ="0" ParsingMode="Decimal"/>
+            <Button Command="{Binding ConfirmarCommand}" BackgroundColor="#280680" Margin="40, 20, 40, 20" TextColor="White" FontSize="12" Text="Avançar"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

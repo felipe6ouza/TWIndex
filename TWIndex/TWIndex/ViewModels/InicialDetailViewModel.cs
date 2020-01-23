@@ -34,42 +34,42 @@ namespace TWIndex.ViewModels
 
                 TiposTrabalho.Add(new Trabalho
                 {
-                    Nome = "Doutorado"
+                    Tipo = "Doutorado"
                 });
 
                 TiposTrabalho.Add(new Trabalho
                 {
-                    Nome = "Mestrado"
+                    Tipo = "Mestrado"
                 });
 
                 TiposTrabalho.Add(new Trabalho
                 {
-                    Nome = "Trabalho de Conclusão de Curso"
+                    Tipo = "Trabalho de Conclusão de Curso"
                 });
 
                 TiposTrabalho.Add(new Trabalho
                 {
-                    Nome = "Relatório Técnico"
+                    Tipo = "Relatório Técnico"
                 });
 
                 TiposTrabalho.Add(new Trabalho
                 {
-                    Nome = "Relatório Científico"
+                    Tipo = "Relatório Científico"
                 });
 
                 TiposTrabalho.Add(new Trabalho
                 {
-                    Nome = "Iniciação Tecnológica"
+                    Tipo = "Iniciação Tecnológica"
                 });
 
                 TiposTrabalho.Add(new Trabalho
                 {
-                    Nome = "Iniciação Científica"
+                    Tipo = "Iniciação Científica"
                 });
 
                 TiposTrabalho.Add(new Trabalho
                 {
-                    Nome = "Patente"
+                    Tipo = "Patente"
                 });
             }
     }
