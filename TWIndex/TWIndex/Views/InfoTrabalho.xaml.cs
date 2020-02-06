@@ -29,9 +29,11 @@ namespace TWIndex.Views
         {
             base.OnAppearing();
 
-            MessagingCenter.Subscribe<Trabalho>(this, "EntradaVerificada", (msg) =>
+            MessagingCenter.Subscribe<InfoTrabalhoViewModel>(this, "EntradaVerificada", (msg) =>
             {
-                DisplayAlert("Página ainda não implementada", "Volte em breve", "OK");
+                int convertedNumericUpDown = -1;
+                convertedNumericUpDown = Convert.ToInt32(msg.ValorNumericUpDown);
+                Navigation.PushAsync(new InserirTermosBusca(convertedNumericUpDown));
             });
         }
 

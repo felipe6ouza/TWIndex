@@ -9,7 +9,17 @@ namespace TWIndex.ViewModels
 {
     public class InfoTrabalhoViewModel : INotifyPropertyChanged
     {
+  
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void OnPropertyChanged(string propertyName)
+        {
+            if (PropertyChanged != null)
+                PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
         public Trabalho trabalho = new Trabalho();
+
+
 
         public string EntryTipo
         {
@@ -24,14 +34,6 @@ namespace TWIndex.ViewModels
             }
 
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        public void OnPropertyChanged(string propertyName)
-        {
-            if (PropertyChanged != null)
-                PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
 
         public string EntryTitulo
         {
@@ -85,6 +87,8 @@ namespace TWIndex.ViewModels
             {
                 valorNumericUpDown = value;
                 OnPropertyChanged(valorNumericUpDown);
+      
+ 
             }
         }
 
@@ -99,9 +103,8 @@ namespace TWIndex.ViewModels
 
         private void ExecutarConfirmar()
         {
-            MessagingCenter.Send(trabalho, "EntradaVerificada");
+            MessagingCenter.Send(this, "EntradaVerificada");
           
-           
         }
 
     }
