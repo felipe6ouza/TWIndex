@@ -11,12 +11,12 @@ using Xamarin.Forms.Xaml;
 namespace TWIndex.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class InicialDetail : ContentPage
+    public partial class MenuDetail : ContentPage
     {
-        public InicialDetail()
+        public MenuDetail()
         {
             InitializeComponent();
-            this.BindingContext = new InicialDetailViewModel();
+            this.BindingContext = new MenuDetailViewModel();
         }
 
         protected override void OnAppearing()

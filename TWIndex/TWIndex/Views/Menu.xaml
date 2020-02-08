@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TWIndex.Menu"
+              Title="Master">
+    <MasterDetailPage.Master>
+        <ContentPage Title="Master">
+            <StackLayout BackgroundColor="White">
+                <Grid BackgroundColor="#5e35b1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="10"/>
+                    </Grid.RowDefinitions>
+                    <Label
+                     Grid.Column="1"
+                     Grid.Row="2"
+                     Text="Felipe Souza"
+                        TextColor="White"
+                        FontSize="Large">
+                    </Label>
+                    <Label
+                     Grid.Column="1"
+                     Grid.Row="3"
+                     Text="felipe.souza@dcomp.ufs.br"
+                        TextColor="White"
+                        FontSize="Small">
+                    </Label>
+                </Grid>
+
+                <TableView Intent="Menu">
+                    <TableSection>
+                        <ViewCell Tapped="GoSobre">
+                            <StackLayout Padding="15,10">
+                                <Label Text="Sobre" TextColor="Black" FontSize ="Medium"  VerticalTextAlignment="Center"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </TableSection>
+                </TableView>
+
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Master>
+   
+</MasterDetailPage>

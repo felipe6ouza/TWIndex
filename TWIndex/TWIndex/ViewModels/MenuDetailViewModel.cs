@@ -7,7 +7,7 @@ using Xamarin.Forms;
 
 namespace TWIndex.ViewModels
 {
-    public class InicialDetailViewModel
+    public class MenuDetailViewModel
     {
             Trabalho _trabalhoSelecionado;
 
@@ -28,7 +28,7 @@ namespace TWIndex.ViewModels
 
             public ObservableCollection<Trabalho> TiposTrabalho { get; }
 
-            public InicialDetailViewModel()
+            public MenuDetailViewModel()
             {
                 TiposTrabalho = new ObservableCollection<Trabalho>();
 
