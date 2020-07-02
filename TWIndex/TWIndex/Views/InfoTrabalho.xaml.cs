@@ -25,17 +25,28 @@ namespace TWIndex.Views
 
         }
 
+
+        void OnStepperValueChanged(object sender, ValueChangedEventArgs args)
+        {
+            double value = args.NewValue;
+
+            stepperLabel.Text = string.Format("{0}", value);
+
+        }
+
         protected override void OnAppearing()
         {
             base.OnAppearing();
 
             MessagingCenter.Subscribe<InfoTrabalhoViewModel>(this, "EntradaVerificada", (msg) =>
             {
-                int convertedNumericUpDown = -1;
-                convertedNumericUpDown = Convert.ToInt32(msg.ValorNumericUpDown);
-                Navigation.PushAsync(new InserirTermosBusca(convertedNumericUpDown));
+                int ConvertedValorStepper = -1;
+                ConvertedValorStepper = Convert.ToInt32(msg.ValorStepper);
+                Navigation.PushAsync(new InserirTermosBusca(ConvertedValorStepper));
             });
         }
+
+
 
         protected override void OnDisappearing()
         {

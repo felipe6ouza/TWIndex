@@ -75,18 +75,18 @@ namespace TWIndex.ViewModels
             }
         }
 
-        public string valorNumericUpDown = "4";
-        public string ValorNumericUpDown
+        public string _valorStepper = "2";
+        public string ValorStepper
         {
             get
             {
-                return valorNumericUpDown;
+                return _valorStepper;
             }
 
             set
             {
-                valorNumericUpDown = value;
-                OnPropertyChanged(valorNumericUpDown);
+                _valorStepper = value;
+                OnPropertyChanged(_valorStepper);
       
  
             }
