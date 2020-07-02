@@ -4,74 +4,84 @@ using System.Text;
 using System.Collections.ObjectModel;
 using TWIndex.Models;
 using Xamarin.Forms;
+using MVVMCoffee.ViewModels;
 
 namespace TWIndex.ViewModels
 {
-    public class MenuDetailViewModel
+    public class MenuDetailViewModel : BaseViewModel
     {
-            Trabalho _trabalhoSelecionado;
+        public Tipo _tipoSelecionado;
 
-            public Trabalho TrabalhoSelecionado
+        public Tipo TipoSelecionado
+        {
+            get
             {
-                get
-                {
-                    return _trabalhoSelecionado;
-                }
-
-                set
-                {
-                    _trabalhoSelecionado = value;
-                    if (value != null)
-                        MessagingCenter.Send(TrabalhoSelecionado, "TrabalhoSelecionado");
-                }
+                return _tipoSelecionado;
             }
 
-            public ObservableCollection<Trabalho> TiposTrabalho { get; }
-
-            public MenuDetailViewModel()
+            set
             {
-                TiposTrabalho = new ObservableCollection<Trabalho>();
+                SetProperty(ref _tipoSelecionado, value);
 
-                TiposTrabalho.Add(new Trabalho
-                {
-                    Tipo = "Doutorado"
-                });
+                if (value != null)
+                    ExecutePush();
 
-                TiposTrabalho.Add(new Trabalho
-                {
-                    Tipo = "Mestrado"
-                });
 
-                TiposTrabalho.Add(new Trabalho
-                {
-                    Tipo = "Trabalho de Conclusão de Curso"
-                });
-
-                TiposTrabalho.Add(new Trabalho
-                {
-                    Tipo = "Relatório Técnico"
-                });
-
-                TiposTrabalho.Add(new Trabalho
-                {
-                    Tipo = "Relatório Científico"
-                });
-
-                TiposTrabalho.Add(new Trabalho
-                {
-                    Tipo = "Iniciação Tecnológica"
-                });
-
-                TiposTrabalho.Add(new Trabalho
-                {
-                    Tipo = "Iniciação Científica"
-                });
-
-                TiposTrabalho.Add(new Trabalho
-                {
-                    Tipo = "Patente"
-                });
             }
+        }
+
+        private async void ExecutePush()
+        {
+            var str = TipoSelecionado.Nome;
+            await Navigation.PushAsync<FormTrabalhoViewModel>(false, str);
+        }
+
+        public ObservableCollection<Tipo> TiposTrabalho { get; }
+
+        public MenuDetailViewModel()
+        {
+            TiposTrabalho = new ObservableCollection<Tipo>();
+
+            TiposTrabalho.Add(new Tipo
+            {
+                Nome = "Doutorado"
+            });
+
+            TiposTrabalho.Add(new Tipo
+            {
+                Nome = "Mestrado"
+            });
+
+            TiposTrabalho.Add(new Tipo
+            {
+                Nome = "Trabalho de Conclusão de Curso"
+            });
+
+            TiposTrabalho.Add(new Tipo
+            {
+                Nome = "Relatório Técnico"
+            });
+
+            TiposTrabalho.Add(new Tipo
+            {
+                Nome = "Relatório Científico"
+            });
+
+            TiposTrabalho.Add(new Tipo
+            {
+                Nome = "Iniciação Tecnológica"
+            });
+
+            TiposTrabalho.Add(new Tipo
+            {
+                Nome = "Iniciação Científica"
+            });
+
+            TiposTrabalho.Add(new Tipo
+            {
+                Nome = "Patente"
+            });
+        }
     }
- }
+}
 

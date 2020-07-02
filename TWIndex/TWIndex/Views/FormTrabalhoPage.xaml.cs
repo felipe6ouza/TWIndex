@@ -1,30 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TWIndex.Models;
+using TWIndex.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using TWIndex.ViewModels;
 
 namespace TWIndex.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class InfoTrabalho : ContentPage
+    public partial class FormTrabalhoPage : ContentPage
     {
-        public InfoTrabalho(Trabalho trabalho)
+        public FormTrabalhoPage()
         {
-            InitializeComponent();
-
-            var viewModel = new InfoTrabalhoViewModel();
-
-            viewModel.EntryTipo = trabalho.Tipo;
-            this.BindingContext = viewModel;
-
-
+            InitializeComponent();   
         }
-
 
         void OnStepperValueChanged(object sender, ValueChangedEventArgs args)
         {
@@ -38,7 +26,7 @@ namespace TWIndex.Views
         {
             base.OnAppearing();
 
-            MessagingCenter.Subscribe<InfoTrabalhoViewModel>(this, "EntradaVerificada", (msg) =>
+            MessagingCenter.Subscribe<FormTrabalhoViewModel>(this, "EntradaVerificada", (msg) =>
             {
                 int ConvertedValorStepper = -1;
                 ConvertedValorStepper = Convert.ToInt32(msg.ValorStepper);

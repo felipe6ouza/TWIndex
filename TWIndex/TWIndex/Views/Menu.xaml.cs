@@ -15,7 +15,7 @@ namespace TWIndex
         public Menu()
         {
             InitializeComponent();
-            Detail = new NavigationPage(new MenuDetail());
+            Detail = new NavigationPage(new MenuDetailPage());
         }
 
 

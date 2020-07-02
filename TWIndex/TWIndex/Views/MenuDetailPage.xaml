@@ -4,7 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="TWIndex.Views.MenuDetail"
+             x:Class="TWIndex.Views.MenuDetailPage"
              Title="Detail"
              Visual="Material">
 
@@ -15,11 +15,11 @@
     </NavigationPage.TitleView>
 
     <StackLayout Padding="10">
-        <CollectionView ItemsSource="{Binding TiposTrabalho}" SelectionMode="Single" SelectedItem="{Binding TrabalhoSelecionado}">
+        <CollectionView ItemsSource="{Binding TiposTrabalho}" SelectionMode="Single" SelectedItem="{Binding TipoSelecionado}">
             <CollectionView.ItemTemplate >
                 <DataTemplate>
                     <StackLayout>
-                        <Label Margin="10" Text="{Binding Tipo}" FontSize="18" ></Label>
+                        <Label Margin="10" Text="{Binding Nome}" FontSize="18" ></Label>
                     </StackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
