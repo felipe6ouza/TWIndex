@@ -6,6 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microcharts" Version="0.8.5-pre" />
+    <PackageReference Include="Microcharts.Forms" Version="0.8.5-pre" />
     <PackageReference Include="MVVMCoffee" Version="1.1.0" />
     <PackageReference Include="refit" Version="5.1.67" />
     <PackageReference Include="Xamarin.Forms" Version="4.7.0.1080" />
@@ -14,8 +16,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Views\MenuDetailPage.xaml.cs">
-      <DependentUpon>MenuDetailPage.xaml</DependentUpon>
+    <Compile Update="Views\FormPalavrasPage.xaml.cs">
+      <DependentUpon>FormPalavrasPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\MenuPage.xaml.cs">
+      <DependentUpon>MenuPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\TipoTrabalhoPage.xaml.cs">
+      <DependentUpon>TipoTrabalhoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ResultadoPage.xaml.cs">
+      <DependentUpon>ResultadoPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -23,13 +34,19 @@
     <EmbeddedResource Update="Views\FormTrabalhoPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Menu.xaml">
+    <EmbeddedResource Update="Views\GraficoPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\MenuDetailPage.xaml">
+    <EmbeddedResource Update="Views\MenuPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\InserirTermosBusca.xaml">
+    <EmbeddedResource Update="Views\TipoTrabalhoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\FormPalavrasPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ResultadoPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Sobre.xaml">

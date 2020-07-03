@@ -5,10 +5,12 @@ using System.Collections.ObjectModel;
 using TWIndex.Models;
 using Xamarin.Forms;
 using MVVMCoffee.ViewModels;
+using MVVMCoffee.Services;
+using TWIndex.Views;
 
 namespace TWIndex.ViewModels
 {
-    public class MenuDetailViewModel : BaseViewModel
+    public class TipoTrabalhoViewModel : BaseViewModel
     {
         public Tipo _tipoSelecionado;
 
@@ -24,21 +26,18 @@ namespace TWIndex.ViewModels
                 SetProperty(ref _tipoSelecionado, value);
 
                 if (value != null)
-                    ExecutePush();
-
+                {
+                    var str = TipoSelecionado.Nome;
+                    MessagingCenter.Send<TipoTrabalhoViewModel, string>(this, "TipoTrabalhoSelecionado", str);
+                }
+                    
 
             }
         }
 
-        private async void ExecutePush()
-        {
-            var str = TipoSelecionado.Nome;
-            await Navigation.PushAsync<FormTrabalhoViewModel>(false, str);
-        }
-
         public ObservableCollection<Tipo> TiposTrabalho { get; }
 
-        public MenuDetailViewModel()
+        public TipoTrabalhoViewModel()
         {
             TiposTrabalho = new ObservableCollection<Tipo>();
 

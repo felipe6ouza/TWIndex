@@ -3,23 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TWIndex.Views;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace TWIndex
+namespace TWIndex.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Menu : MasterDetailPage
+    public partial class MenuPage : MasterDetailPage
     {
-        public Menu()
+        public MenuPage()
         {
             InitializeComponent();
-            Detail = new NavigationPage(new MenuDetailPage());
+            Detail = new NavigationPage(new TipoTrabalhoPage());
         }
-
-
-        private void GoSobre(object sender, EventArgs e)
+        private void GoSobre(object sender, System.EventArgs e)
         {
             Detail.Navigation.PushAsync(new Sobre());
             IsPresented = false;

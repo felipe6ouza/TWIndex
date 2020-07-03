@@ -4,14 +4,10 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="TWIndex.Views.InserirTermosBusca"
+             x:Class="TWIndex.Views.FormPalavrasPage"
+             Title="Inserir Termos de Busca"
              Visual="Material"
              >
-    <NavigationPage.TitleView>
-        <StackLayout Orientation="Horizontal">
-            <Label Text="Inserir Termos de Busca" FontSize="17" TextColor="White"  />
-        </StackLayout>
-    </NavigationPage.TitleView>
 
     <ContentPage.Content>
         <ScrollView>

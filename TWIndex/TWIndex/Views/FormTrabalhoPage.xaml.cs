@@ -9,9 +9,10 @@ namespace TWIndex.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class FormTrabalhoPage : ContentPage
     {
-        public FormTrabalhoPage()
+        public FormTrabalhoPage(string tipo)
         {
-            InitializeComponent();   
+            InitializeComponent();
+            BindingContext = new FormTrabalhoViewModel(tipo);
         }
 
         void OnStepperValueChanged(object sender, ValueChangedEventArgs args)
@@ -22,24 +23,5 @@ namespace TWIndex.Views
 
         }
 
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-
-            MessagingCenter.Subscribe<FormTrabalhoViewModel>(this, "EntradaVerificada", (msg) =>
-            {
-                int ConvertedValorStepper = -1;
-                ConvertedValorStepper = Convert.ToInt32(msg.ValorStepper);
-                Navigation.PushAsync(new InserirTermosBusca(ConvertedValorStepper));
-            });
-        }
-
-
-
-        protected override void OnDisappearing()
-        {
-            base.OnDisappearing();
-            MessagingCenter.Unsubscribe<Trabalho>(this, "EntradaVerificada");
-        }
     }
 }

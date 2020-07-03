@@ -12,7 +12,7 @@ namespace TWIndex
 
             InitializeComponent();
 
-            MainPage = new NavigationPage(new Menu());
+            MainPage = new MenuPage();
         }
 
         protected override void OnStart()

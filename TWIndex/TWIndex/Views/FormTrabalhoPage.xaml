@@ -6,12 +6,7 @@
              mc:Ignorable="d"
              x:Class="TWIndex.Views.FormTrabalhoPage"
              Visual="Material"
-             Title="{Binding TitlePage}">
-    <NavigationPage.TitleView>
-        <StackLayout Orientation="Horizontal" HeightRequest="50">
-            <Label Text="Informações Sobre o Trabalho" FontSize="17" TextColor="White"  />
-        </StackLayout>
-    </NavigationPage.TitleView>
+             Title="Informações Sobre o Trabalho">
 
 
     <ContentPage.Content>

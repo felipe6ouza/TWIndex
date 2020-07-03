@@ -78,7 +78,8 @@ namespace TWIndex.ViewModels
             ConfirmarCommand = new Command(
           execute: () =>
           {
-              MessagingCenter.Send(this, "EntradaVerificada");
+              int quantidadePalavras = int.Parse(ValorStepper);
+              Navigation.PushAsync<FormPalavrasViewModel>(false, quantidadePalavras);
           },
 
             canExecute: () =>

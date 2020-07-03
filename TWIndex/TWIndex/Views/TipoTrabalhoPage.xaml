@@ -4,15 +4,11 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="TWIndex.Views.MenuDetailPage"
-             Title="Detail"
-             Visual="Material">
-
-    <NavigationPage.TitleView>
-        <StackLayout Orientation="Horizontal">
-            <Label Text="Avaliar Proposta" FontFamily="Roboto"  FontSize="20" TextColor="White" VerticalTextAlignment="Center" />
-        </StackLayout>
-    </NavigationPage.TitleView>
+             x:Class="TWIndex.Views.TipoTrabalhoPage"
+             Title="Selecionar Tipo de Trabalho"
+             Visual="Material"
+             Padding="0"
+            >
 
     <StackLayout Padding="10">
         <CollectionView ItemsSource="{Binding TiposTrabalho}" SelectionMode="Single" SelectedItem="{Binding TipoSelecionado}">
