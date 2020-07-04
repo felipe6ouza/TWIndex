@@ -1,5 +1,4 @@
 ﻿using System;
-using TWIndex.Models;
 using TWIndex.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -23,5 +22,10 @@ namespace TWIndex.Views
 
         }
 
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new MenuPage();
+
+        }
     }
 }

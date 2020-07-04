@@ -16,6 +16,7 @@ namespace TWIndex.Views
         {
             InitializeComponent();
             Detail = new NavigationPage(new TipoTrabalhoPage());
+
         }
         private void GoSobre(object sender, System.EventArgs e)
         {

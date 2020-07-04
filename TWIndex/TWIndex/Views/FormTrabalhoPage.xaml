@@ -6,7 +6,15 @@
              mc:Ignorable="d"
              x:Class="TWIndex.Views.FormTrabalhoPage"
              Visual="Material"
-             Title="Informações Sobre o Trabalho">
+            >
+
+    <NavigationPage.TitleView>
+        <FlexLayout Direction="Row" JustifyContent="Start">
+            <ImageButton HeightRequest="28" WidthRequest="28" Source="arrowback.png" BackgroundColor="#5e35b1" Clicked="Button_Clicked"></ImageButton>
+            <Label Margin="20,0,0,0" Text="Informações sobre o Trabalho" FontSize="17" TextColor="White"  />
+           
+        </FlexLayout>
+    </NavigationPage.TitleView>
 
 
     <ContentPage.Content>
@@ -22,8 +30,7 @@
                     <Label Text="4" FontSize="18" FontAttributes="Bold" TextColor="Black" VerticalTextAlignment="Center" x:Name="stepperLabel"></Label>
                     <Stepper ValueChanged="OnStepperValueChanged" Minimum="1" Maximum="5" Increment="1" Value="{Binding ValorStepper, Mode=TwoWay}"  />
                 </FlexLayout>
-
-                <Button Command="{Binding ConfirmarCommand}" BackgroundColor="#280680" Margin="40, 20, 40, 20" TextColor="White" FontSize="12" Text="Avançar"></Button>
+                <Button  Margin="40, 20, 40, 20" Command="{Binding ConfirmarCommand}" BackgroundColor="#280680" TextColor="White" FontSize="12" Text="Avançar"></Button>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
