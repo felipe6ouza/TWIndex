@@ -19,22 +19,5 @@ namespace TWIndex.Views
             InitializeComponent();
             BindingContext = new TipoTrabalhoViewModel();
         }
-
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-
-            MessagingCenter.Subscribe<TipoTrabalhoViewModel, string>(this, "TipoTrabalhoSelecionado", (sender, args) =>
-            {
-                Application.Current.MainPage = new NavigationPage(new FormTrabalhoPage(args));
-
-            });
-        }
-
-        protected override void OnDisappearing()
-        {
-            MessagingCenter.Unsubscribe<TipoTrabalhoViewModel, string>(this, "TipoTrabalhoSelecionado");
-        }
-
     }
 }

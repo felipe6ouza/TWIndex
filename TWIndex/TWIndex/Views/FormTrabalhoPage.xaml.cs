@@ -8,10 +8,9 @@ namespace TWIndex.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class FormTrabalhoPage : ContentPage
     {
-        public FormTrabalhoPage(string tipo)
+        public FormTrabalhoPage()
         {
             InitializeComponent();
-            BindingContext = new FormTrabalhoViewModel(tipo);
         }
 
         void OnStepperValueChanged(object sender, ValueChangedEventArgs args)
@@ -22,10 +21,5 @@ namespace TWIndex.Views
 
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
-        {
-            Application.Current.MainPage = new MenuPage();
-
-        }
     }
 }

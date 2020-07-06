@@ -73,8 +73,6 @@ namespace TWIndex.ViewModels
         {
             Tipo = tipoTrabalho;
 
-            TitlePage = "FormTrabalhoPage";
-
             ConfirmarCommand = new Command(
           execute: () =>
           {

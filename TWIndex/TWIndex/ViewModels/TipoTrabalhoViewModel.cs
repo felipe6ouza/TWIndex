@@ -28,11 +28,19 @@ namespace TWIndex.ViewModels
                 if (value != null)
                 {
                     var str = TipoSelecionado.Nome;
-                    MessagingCenter.Send<TipoTrabalhoViewModel, string>(this, "TipoTrabalhoSelecionado", str);
+                    ExecutePushAsyncCommand(str);
                 }
                     
 
             }
+        }
+
+
+        private async void ExecutePushAsyncCommand(string tipo)
+        {
+
+            await Navigation.PushAsync<FormTrabalhoViewModel>(false, tipo);
+
         }
 
         public ObservableCollection<Tipo> TiposTrabalho { get; }

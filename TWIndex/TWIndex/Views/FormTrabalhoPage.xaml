@@ -6,17 +6,8 @@
              mc:Ignorable="d"
              x:Class="TWIndex.Views.FormTrabalhoPage"
              Visual="Material"
+             Title="Informações sobre o Trabalho"
             >
-
-    <NavigationPage.TitleView>
-        <FlexLayout Direction="Row" JustifyContent="Start">
-            <ImageButton HeightRequest="28" WidthRequest="28" Source="arrowback.png" BackgroundColor="#5e35b1" Clicked="Button_Clicked"></ImageButton>
-            <Label Margin="20,0,0,0" Text="Informações sobre o Trabalho" FontSize="17" TextColor="White"  />
-           
-        </FlexLayout>
-    </NavigationPage.TitleView>
-
-
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Margin="15">
