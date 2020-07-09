@@ -15,5 +15,8 @@ namespace TWIndex.Models
         [JsonProperty("desempenho-mensal-conjunto")]
         public Dictionary<string, float> DesempenhoMensalConjunto { get; set; }
 
+        [JsonProperty("desempenho-anual-conjunto")]
+        public float DesempenhoAnualConjunto { get; set; }
+
     }
 }

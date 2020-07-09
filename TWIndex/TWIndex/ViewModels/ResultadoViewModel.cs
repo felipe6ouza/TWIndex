@@ -38,7 +38,7 @@ namespace TWIndex.ViewModels
         public ResultadoViewModel(List<string> palavras)
         {
             TitlePage = "Resultados";
-            _ = ConsultaPytrends(palavras);
+            ConsultaPytrends(palavras);
 
             PushAsyncGraficoCommand = new Command<string>(ExecutePushAsyncGraficoCommand);
 
@@ -51,7 +51,7 @@ namespace TWIndex.ViewModels
            
         }
 
-        private async Task ConsultaPytrends(List<string> palavras)
+        private async void ConsultaPytrends(List<string> palavras)
         {
 
             Show = false;

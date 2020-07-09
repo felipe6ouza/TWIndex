@@ -19,8 +19,19 @@
                     <FlexLayout x:Name="FlexResult" IsVisible="True" HorizontalOptions="Center" Direction="Column" BackgroundColor="White">
                         <StackLayout HorizontalOptions="Center" Margin="0,20" Padding="30,0" BackgroundColor="White">
                             <Label x:Name="Title" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="Subtitle" TextColor="Black" Text="Indice ITW"></Label>
-                            <Label FontSize="Micro" Text="O texto que será inserido aqui descreverá informações a respeito do índice ITW."></Label>
+                            <Label FontSize="Micro" Text="Os números representam o interesse de pesquisa relativo ao média do último ano. Um valor de 100 representa o pico de popularidade de uma palavra-chave. Um valor de 50 significa que a palavra-chave teve metade da popularidade. Uma pontuação de 0 significa que não havia dados suficientes sobre a palavra-chave."></Label>
                         </StackLayout>
+
+                        <Frame Margin="10" BorderColor="White" HasShadow="True" CornerRadius="5" Padding="10">
+                            <FlexLayout HeightRequest="100" Wrap="Wrap" Direction="Column" JustifyContent="SpaceAround">
+                                <Label Text="Conjunto com Todas as Palavras-Chave Inseridas" FontSize="Micro"></Label>
+                                <Label Text="Desempenho Geral" FontAttributes="Bold" FontSize="Medium" TextColor="Black"></Label>
+                                <Label Text="ITW Médio" FontSize="Micro"></Label>
+                                <Label TextColor="Black" FontSize="Subtitle" FontAttributes="Bold"  Text="{Binding Resultado.DesempenhoAnualConjunto,  StringFormat='{0:F2}'}"></Label>
+
+                            </FlexLayout>
+                        </Frame>
+
                         <CollectionView x:Name="tabela" ItemsSource="{Binding Resultado.DesempenhoAnualPalavra}">
                             <CollectionView.ItemTemplate>
                                 <DataTemplate>
