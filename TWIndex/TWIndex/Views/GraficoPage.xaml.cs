@@ -1,6 +1,8 @@
 ﻿using Microcharts;
 using SkiaSharp;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,11 +12,13 @@ namespace TWIndex.Views
     public partial class GraficoPage : ContentPage
     {
         public static readonly SKColor TextColor = SKColors.Black;
+
         public GraficoPage()
         {
             InitializeComponent();
 
             InicialiazarGrafico();
+
         }
 
         private void InicialiazarGrafico()
@@ -30,103 +34,133 @@ namespace TWIndex.Views
 
         public Chart[] PopularDados(Dictionary<string, float> Dados)
         {
+            var meses = new Dictionary<string, int>();
+            #region AdicionarMeses
+            meses.Add("Janeiro", 1);
+            meses.Add("Fevereiro", 2);
+            meses.Add("Março", 3);
+            meses.Add("Abril", 4);
+            meses.Add("Maio", 5);
+            meses.Add("Junho", 6);
+            meses.Add("Julho", 7);
+            meses.Add("Agosto", 8);
+            meses.Add("Setembro", 9);
+            meses.Add("Outubro", 10);
+            meses.Add("Novembro", 11);
+            meses.Add("Dezembro", 12);
+            #endregion
+            var mesesOrdenados = new List<string>();
+
+            var atual = DateTime.Now.Month;
+
+            for (int i = atual - 1; i >= 1; i--)
+                mesesOrdenados.Add(meses.Where(a => a.Value == i).Select(a => a.Key).First());
+
+            for (int i = 12; i >= atual; i--)
+                mesesOrdenados.Add(meses.Where(a => a.Value == i).Select(a => a.Key).First());
+
+            mesesOrdenados.Reverse();
+
             var entries = new[]
             {
-                new ChartEntry(Dados["Janeiro"])
+                new ChartEntry(Dados[mesesOrdenados[0]])
                 {
-                    Label = "Janeiro",
-                    ValueLabel = string.Format("{0:N2}", Dados["Janeiro"]),
+                    Label = mesesOrdenados[0],
+                    ValueLabel = string.Format("{0:N2}", Dados[mesesOrdenados[0]]),
 
                     Color = SKColor.Parse("#266488"),
                     TextColor = TextColor
                 },
 
-                 new ChartEntry(Dados["Fevereiro"])
+                 new ChartEntry(Dados[mesesOrdenados[1]])
                 {
-                    Label = "Fevereiro",
-                    ValueLabel = string.Format("{0:N2}", Dados["Fevereiro"]),
+                    Label = mesesOrdenados[1],
+                    ValueLabel = string.Format("{0:N2}", Dados[mesesOrdenados[1]]),
                     Color = SKColor.Parse("#68b9c0"),
                     TextColor = TextColor
                 },
-                 new ChartEntry(Dados["Março"])
+                 new ChartEntry(Dados[mesesOrdenados[2]])
                 {
-                    Label = "Março",
-                    ValueLabel = string.Format("{0:N2}", Dados["Março"]),
+                    Label = mesesOrdenados[2],
+                    ValueLabel = string.Format("{0:N2}", Dados[mesesOrdenados[2]]),
                     Color = SKColor.Parse("#90d585"),
                     TextColor = TextColor
-                },
-
-                new ChartEntry(Dados["Abril"])
+                }, 
+                
+                new ChartEntry(Dados[mesesOrdenados[3]])
                 {
-                    Label = "Abril",
-                    ValueLabel = string.Format("{0:N2}", Dados["Abril"]),
+                    Label = mesesOrdenados[3],
+                    ValueLabel = string.Format("{0:N2}", Dados[mesesOrdenados[3]]),
                     Color = SKColor.Parse("#f3c151"),
                     TextColor = TextColor
-                },
-
-                new ChartEntry(Dados["Maio"])
+                }, 
+                new ChartEntry(Dados[mesesOrdenados[4]])
                 {
-                    Label = "Maio",
-                    ValueLabel = string.Format("{0:N2}", Dados["Maio"]),
+                    Label = mesesOrdenados[4],
+                    ValueLabel = string.Format("{0:N2}", Dados[mesesOrdenados[4]]),
                     Color = SKColor.Parse("#f37f64"),
                     TextColor = TextColor
+
                 },
-                 new ChartEntry(Dados["Junho"])
+                
+                new ChartEntry(Dados[mesesOrdenados[5]])
                 {
-                    Label = "Junho",
-                    ValueLabel = string.Format("{0:N2}", Dados["Junho"]),
+                    Label = mesesOrdenados[5],
+                    ValueLabel = string.Format("{0:N2}", Dados[mesesOrdenados[5]]),
                     Color = SKColor.Parse("#424856"),
                     TextColor = TextColor
                 },
-                 new ChartEntry(Dados["Julho"])
+                   
+                new ChartEntry(Dados[mesesOrdenados[6]])
                 {
-                    Label = "Julho",
-                    ValueLabel = string.Format("{0:N2}", Dados["Julho"]),
+                    Label = mesesOrdenados[6],
+                    ValueLabel = string.Format("{0:N2}", Dados[mesesOrdenados[6]]),
                     Color = SKColor.Parse("#8f97a4"),
                     TextColor = TextColor
-                },
-
-                 new ChartEntry(Dados["Agosto"])
+                },   
+                
+                new ChartEntry(Dados[mesesOrdenados[7]])
                 {
-                    Label = "Agosto",
-                    ValueLabel = string.Format("{0:N2}", Dados["Agosto"]),
+                    Label = mesesOrdenados[7],
+                    ValueLabel = string.Format("{0:N2}", Dados[mesesOrdenados[7]]),
                     Color = SKColor.Parse("#dabf96"),
                     TextColor = TextColor
                 },
-
-                  new ChartEntry(Dados["Setembro"])
+                  
+                new ChartEntry(Dados[mesesOrdenados[8]])
                 {
-                    Label = "Setembro",
-                    ValueLabel = string.Format("{0:N2}", Dados["Setembro"]),
+                    Label = mesesOrdenados[8],
+                    ValueLabel = string.Format("{0:N2}", Dados[mesesOrdenados[8]]),
                     Color = SKColor.Parse("#76846e"),
                     TextColor = TextColor
                 },
-
-                  new ChartEntry(Dados["Outubro"])
+                   
+                new ChartEntry(Dados[mesesOrdenados[9]])
                 {
-                    Label = "Outubro",
-                    ValueLabel = string.Format("{0:N2}", Dados["Outubro"]),
+                    Label = mesesOrdenados[9],
+                    ValueLabel = string.Format("{0:N2}", Dados[mesesOrdenados[9]]),
                     Color = SKColor.Parse("#dabfaf"),
                     TextColor = TextColor
                 },
 
-
-                  new ChartEntry(Dados["Novembro"])
+                  
+                new ChartEntry(Dados[mesesOrdenados[10]])
                 {
-                    Label = "Novembro",
-                    ValueLabel = string.Format("{0:N2}", Dados["Novembro"]),
+                    Label = mesesOrdenados[10],
+                    ValueLabel = string.Format("{0:N2}", Dados[mesesOrdenados[10]]),
                     Color = SKColor.Parse("#a65b69"),
                     TextColor = TextColor
                 },
-
-
-                  new ChartEntry(Dados["Dezembro"])
+                   
+                new ChartEntry(Dados[mesesOrdenados[11]])
                 {
-                    Label = "Dezembro",
-                    ValueLabel = string.Format("{0:N2}", Dados["Dezembro"]),
+                    Label = mesesOrdenados[11],
+                    ValueLabel = string.Format("{0:N2}", Dados[mesesOrdenados[11]]),
                     Color = SKColor.Parse("#97a69d"),
                     TextColor = TextColor
-                }
+                },
+
+               
 
         };
 
@@ -141,17 +175,7 @@ namespace TWIndex.Views
                     PointSize = 24,
                     LabelTextSize = 32,
                     Margin = 30
-                },
-                 new BarChart()
-                {
-                  Entries = entries ,
-                  LabelTextSize = 35
-                },
-                new PointChart()
-                {
-                  Entries = entries ,
-                  LabelTextSize = 35
-                },
+                }
             };
 
         }
