@@ -90,34 +90,21 @@ namespace TWIndex.ViewModels
        
         public FormPalavrasViewModel(int quantidadePalavras)
         {
-            QuantidadePalavras = quantidadePalavras;
+            QuantidadePalavras = quantidadePalavras;        
+            var listaPalavras = new List<string>();
+
 
             MessagingCenter.Send(this, "QuantidadePalavras", quantidadePalavras);
-
-            
-        
-            var listaAuxiliar = new List<string>();
-            var listaPalavras = new List<string>();
 
             ValidarCommand = new Command(
                 execute: () =>
             {
-
-
-                listaAuxiliar.Add(_palavra1);
-                listaAuxiliar.Add(_palavra2);
-                listaAuxiliar.Add(_palavra3);
-                listaAuxiliar.Add(_palavra4);
-                listaAuxiliar.Add(_palavra5);
-              
-
-                for (int i = 0; i < quantidadePalavras; i++)
-                {
-                    if (!string.IsNullOrEmpty(listaAuxiliar[i]))
-                    {
-                        listaPalavras.Add(listaAuxiliar[i]);
-                    }
-                }
+                listaPalavras.Clear();
+                listaPalavras.Add(Palavra1);
+                listaPalavras.Add(Palavra2);
+                listaPalavras.Add(Palavra3);
+                listaPalavras.Add(Palavra4);
+                listaPalavras.Add(Palavra5);
 
                 ExecutePushAsyncResultadosCommand(listaPalavras);
 
@@ -158,7 +145,7 @@ namespace TWIndex.ViewModels
 
         private async void ExecutePushAsyncResultadosCommand(List<string> palavras)
         {
-
+           
             await Navigation.PushAsync<ResultadoViewModel>(false, palavras);
 
         }
