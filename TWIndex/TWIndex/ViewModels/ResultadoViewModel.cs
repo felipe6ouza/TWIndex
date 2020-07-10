@@ -1,5 +1,6 @@
 ﻿using MVVMCoffee.ViewModels;
 using Refit;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -33,21 +34,39 @@ namespace TWIndex.ViewModels
             set => SetProperty(ref _resultado, value);
         }
 
-        public ICommand PushAsyncGraficoCommand { get; private set; }
+        public ICommand PushAsyncGraficoPalavraCommand { get; private set; }
+
+        public ICommand PushAsyncGraficoConjuntoCommand { get; private set; }
+
 
         public ResultadoViewModel(List<string> palavras)
         {
-            TitlePage = "Resultados";
-            ConsultaPytrends(palavras);
+            var palavrasFiltradas = new List<string>();
 
-            PushAsyncGraficoCommand = new Command<string>(ExecutePushAsyncGraficoCommand);
+            foreach (var item in palavras)
+            {
+                if (!string.IsNullOrEmpty(item))
+                    palavrasFiltradas.Add(item);
+            }
+
+
+            ConsultaPytrends(palavrasFiltradas);
+
+            PushAsyncGraficoPalavraCommand = new Command<string>(ExecutePushAsyncCommand);
+            PushAsyncGraficoConjuntoCommand = new Command(ExecutePushAsyncGraficoConjunto);
+
 
         }
 
-        private async void ExecutePushAsyncGraficoCommand(string palavra)
+        private async void ExecutePushAsyncGraficoConjunto()
+        {
+            await Navigation.PushAsync<GraficoViewModel>(false, Resultado);
+        }
+
+        private async void ExecutePushAsyncCommand(string palavra)
         {
 
-            await Navigation.PushAsync<GraficoViewModel>(false, this.Resultado, palavra);
+            await Navigation.PushAsync<GraficoViewModel>(false, Resultado, palavra);
            
         }
 
@@ -62,7 +81,7 @@ namespace TWIndex.ViewModels
             {
                 var Pytrends = RestService.For<IRestApi>(EndPoints.BaseUrl);
                 var response = await Pytrends.Request(palavras);
-                this.Resultado = response;
+                Resultado = response;
 
             }
 
