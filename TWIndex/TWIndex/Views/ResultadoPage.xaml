@@ -24,8 +24,9 @@
 
                         <Frame Margin="10" BorderColor="White" HasShadow="True" CornerRadius="5" Padding="10">
                             <FlexLayout HeightRequest="100" Wrap="Wrap" AlignItems="Start" Direction="Column" JustifyContent="SpaceAround">
-                                <Label Text="Conjunto com Todas as Palavras-Chave Inseridas" FontSize="Micro"></Label>
-                                <Label Text="Desempenho Geral" FontAttributes="Bold" FontSize="Medium" TextColor="Black"></Label>
+                                <Label Text="Conjunto de Palavras-Chave" FontSize="Micro"></Label>
+                                <Label Text="Desempenho Geral" FontAttributes="Bold" FontSize="Subtitle" TextColor="Black"></Label>
+                                <BoxView Margin="3" Color="Gray" HeightRequest="2" WidthRequest="80" />
                                 <Label Text="ITW Médio" FontSize="Micro"></Label>
                                 <Label TextColor="Black" FontSize="Subtitle" FontAttributes="Bold"  Text="{Binding Resultado.DesempenhoAnualConjunto,  StringFormat='{0:F2}'}"></Label>
                                 <Grid FlexLayout.AlignSelf="Start" WidthRequest="110">
